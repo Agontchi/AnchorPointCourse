@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #2d3748;
+        }
+
+        .chapter {
+            margin-bottom: 30px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .chapter-title {
+            color: #2c5282;
+            cursor: pointer;
+            font-size: 24px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f7fafc;
+            border-radius: 4px;
+        }
+
+        .section {
+            margin: 15px 0;
+            border-left: 3px solid #e2e8f0;
+            padding-left: 15px;
+        }
+
+        .section-title {
+            color: #4a5568;
+            cursor: pointer;
+            font-size: 18px;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5px;
+        }
+
+        .section-content {
+            display: none;
+            padding-left: 20px;
+        }
+
+        .toc {
+            background-color: #f7fafc;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .toc a {
+            color: #4a5568;
+            text-decoration: none;
+            display: block;
+            padding: 4px 0;
+        }
+
+        .toc a:hover {
+            color: #2b6cb0;
+        }
+
+        .show {
+            display: block;
+        }
+
+        .toggle-icon {
+            font-size: 20px;
+            color: #718096;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+        }
+
+        .key-points {
+            background-color: #ebf8ff;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 10px 0;
+            border-left: 4px solid #4299e1;
+        }
+
+        .practical-exercise {
+            background-color: #f0fff4;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 10px 0;
+            border-left: 4px solid #48bb78;
+        }
+
+        .case-study {
+            background-color: #fff5f5;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 10px 0;
+            border-left: 4px solid #f56565;
+        }
+
+        .warning {
+            background-color: #fffaf0;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 10px 0;
+            border-left: 4px solid #ed8936;
+        }
+
+        .tip {
+            background-color: #faf5ff;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 10px 0;
+            border-left: 4px solid #9f7aea;
+        }
+
+        .best-practice {
+            background-color: #e6fffa;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 10px 0;
+            border-left: 4px solid #38b2ac;
+        }
+
+        h1 {
+            color: #1a365d;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+
+        h2 {
+            margin: 0;
+        }
+
+        ul,
+        ol {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        .section-content ul li {
+            margin-bottom: 8px;
+        }
+
+        code {
+            background-color: #f6f8fa;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monaco, Consolas, 'Lucida Console', monospace;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Data Products & Analytics: From Theory to Practice</h1>
+
+    <div class="toc">
+        <h2>Table of Contents</h2>
+        <ul>
+            <li><a href="#chapter1">1. The Data-Driven Organization: Context & Foundation</a></li>
+            <li><a href="#chapter2">2. Understanding Data Products</a></li>
+            <li><a href="#chapter3">3. Data Architecture & Infrastructure</a></li>
+            <li><a href="#chapter4">4. Building Data Products: Process & Methods</a></li>
+            <li><a href="#chapter5">5. Data Operations & Governance</a></li>
+            <li><a href="#chapter6">6. Organization & Culture</a></li>
+            <li><a href="#chapter7">7. Implementation & Change Management</a></li>
+            <li><a href="#chapter8">8. Advanced Topics & Future Trends</a></li>
+        </ul>
+    </div>
+
+    <div id="chapter1" class="chapter">
+        <h2 class="chapter-title">1. The Data-Driven Organization <span class="toggle-icon">+</span></h2>
+
+        <div class="section">
+            <h3 class="section-title">1.1 The Modern Data Landscape <span class="toggle-icon">+</span></h3>
+            <div class="section-content">
+                <div class="key-points">
+                    <h4>Key Concepts:</h4>
+                    <ul>
+                        <li>Evolution of data usage in organizations
+                            <ul>
+                                <li>Historical perspective: From reporting to predictive analytics</li>
+                                <li>Current state: Real-time, AI-driven decisions</li>
+                                <li>Future trends: Edge computing, federated learning</li>
+                            </ul>
+                        </li>
+                        <li>Data value chain components
+                            <ul>
+                                <li>Collection and ingestion strategies</li>
+                                <li>Processing and transformation methods</li>
+                                <li>Analysis and insight generation</li>
+                                <li>Action and value realization</li>
+                            </ul>
+                        </li>
+                        <li>Key challenges in modern data landscape
+                            <ul>
+                                <li>Data quality and reliability</li>
+                                <li>Integration complexity</li>
+                                <li>Scalability requirements</li>
+                                <li>Privacy and security concerns</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="case-study">
+                    <h4>Case Study: Netflix's Data Evolution</h4>
+                    <p>Examining Netflix's journey from DVD rentals to a data-driven streaming platform:</p>
+                    <ul>
+                        <li>Initial data collection methods
+                            <ul>
+                                <li>DVD rental patterns</li>
+                                <li>Customer ratings and reviews</li>
+                            </ul>
+                        </li>
+                        <li>Transition to streaming analytics
+                            <ul>
+                                <li>Real-time viewing patterns</li>
+                                <li>A/B testing implementation</li>
+                                <li>Content recommendation engine</li>
+                            </ul>
+                        </li>
+                        <li>Current state
+                            <ul>
+                                <li>Predictive content creation</li>
+                                <li>Personalized user experience</li>
+                                <li>Infrastructure optimization</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="practical-exercise">
+                    <h4>Exercise: Data Maturity Assessment</h4>
+                    <p>Conduct a data maturity assessment for your organization:</p>
+                    <ol>
+                        <li>Data Collection and Storage
+                            <ul>
+                                <li>Identify current data sources</li>
+                                <li>Evaluate data quality measures</li>
+                                <li>Assess storage solutions</li>
+                            </ul>
+                        </li>
+                        <li>Analysis Capabilities
+                            <ul>
+                                <li>Review existing tools and technologies</li>
+                                <li>Evaluate analytical skill sets</li>
+                                <li>Assess reporting capabilities</li>
+                            </ul>
+                        </li>
+                        <li>Decision Making
+                            <ul>
+                                <li>Map current decision processes</li>
+                                <li>Identify data-driven vs. intuition-based decisions</li>
+                                <li>Evaluate feedback loops</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="warning">
+                    <h4>Common Pitfalls:</h4>
+                    <ul>
+                        <li>Overemphasis on data collection without clear use cases</li>
+                        <li>Neglecting data quality in favor of quantity</li>
+                        <li>Insufficient attention to data governance</li>
+                        <li>Lack of clear ROI measurements</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title">1.2 Data-Driven Decision Making <span class="toggle-icon">+</span></h3>
+            <div class="section-content">
+                <div class="key-points">
+                    <h4>Decision Framework Components:</h4>
+                    <ul>
+                        <li>Strategic Decisions
+                            <ul>
+                                <li>Market entry analysis</li>
+                                <li>Product development prioritization</li>
+                                <li>Resource allocation</li>
+                            </ul>
+                        </li>
+                        <li>Operational Decisions
+                            <ul>
+                                <li>Inventory management</li>
+                                <li>Customer service optimization</li>
+                                <li>Process automation triggers</li>
+                            </ul>
+                        </li>
+                        <li>Statistical Foundations
+                            <ul>
+                                <li>Descriptive statistics</li>
+                                <li>Inferential statistics</li>
+                                <li>Hypothesis testing</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="best-practice">
+                    <h4>Best Practices for Data-Driven Decision Making:</h4>
+                    <ul>
+                        <li>Define clear metrics and KPIs
+                            <ul>
+                                <li>Alignment with business objectives</li>
+                                <li>SMART criteria application</li>
+                                <li>Regular review and adjustment</li>
+                            </ul>
+                        </li>
+                        <li>Implement proper data governance
+                            <ul>
+                                <li>Data quality standards</li>
+                                <li>Access control policies</li>
+                                <li>Documentation requirements</li>
+                            </ul>
+                        </li>
+                        <li>Foster data literacy
+                            <ul>
+                                <li>Training programs</li>
+                                <li>Documentation and resources</li>
+                                <li>Expert support systems</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="case-study">
+                    <h4>Case Study: Amazon's A/B Testing Culture</h4>
+                    <p>Examination of Amazon's systematic approach to testing:</p>
+                    <ul>
+                        <li>Testing Infrastructure
+                            <ul>
+                                <li>Automated testing platforms</li>
+                                <li>Metrics tracking systems</li>
+                                <li>Result analysis frameworks</li>
+                            </ul>
+                        </li>
+                        <li>Decision Process
+                            <ul>
+                                <li>Hypothesis formation</li>
+                                <li>Test design and implementation</li>
+                                <li>Results interpretation</li>
+                            </ul>
+                        </li>
+                        <li>Impact Measurement
+                            <ul>
+                                <li>Short-term metrics</li>
+                                <li>Long-term effects</li>
+                                <li>Customer satisfaction correlation</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="chapter2" class="chapter">
+        <h2 class="chapter-title">2. Understanding Data Products <span class="toggle-icon">+</span></h2>
+
+        <div class="section">
+            <h3 class="section-title">2.1 Data Products Fundamentals <span class="toggle-icon">+</span></h3>
+            <div class="section-content">
+                <div class="key-points">
+                    <h4>Core Concepts:</h4>
+                    <ul>
+                        <li>Definition and Characteristics
+                            <ul>
+                                <li>Self-service capability</li>
+                                <li>Scalability and reusability</li>
+                                <li>Clear value proposition</li>
+                                <li>Measurable impact</li>
+                            </ul>
+                        </li>
+                        <li>Types of Data Products
+                            <ul>
+                                <li>Analytical Products
+                                    <ul>
+                                        <li>Dashboards and reports</li>
+                                        <li>Self-service analytics tools</li>
+                                        <li>Automated insights generation</li>
+                                    </ul>
+                                </li>
+                                <li>Operational Products
+                                    <ul>
+                                        <li>APIs and data services</li>
+                                        <li>Real-time monitoring systems</li>
+                                        <li>Automated decision systems</li>
+                                    </ul>
+                                </li>
+                                <li>Machine Learning Products
+                                    <ul>
+                                        <li>Recommendation engines</li>
+                                        <li>Predictive maintenance systems</li>
+                                        <li>Natural language processing services</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="case-study">
+                    <h4>Case Study: Spotify's Discover Weekly</h4>
+                    <p>Anatomy of a successful data product:</p>
+                    <ul>
+                        <li>Product Components
+                            <ul>
+                                <li>Collaborative filtering system</li>
+                                <li>User behavior analysis</li>
+                                <li>Content-based recommendation engine</li>
+                            </ul>
+                        </li>
+                        <li>Success Metrics
+                            <ul>
+                                <li>User engagement rates</li>
+                                <li>Discovery-to-save ratio</li>
+                                <li>Long-term retention impact</li>
+                            </ul>
+                        </li>
+                        <li>Implementation Lessons
+                            <ul>
+                                <li>Personalization importance</li>
+                                <li>Update frequency optimization</li>
+                                <li>User feedback integration</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="practical-exercise">
+                    <h4>Exercise: Data Product Canvas</h4>
+                    <p>Create a product canvas for a data product idea:</p>
+                    <ol>
+                        <li>Problem Statement
+                            <ul>
+                                <li>Define target user</li>
+                                <li>Identify key pain points</li>
+                                <li>Quantify current impact</li>
+                            </ul>
+                        </li>
+                        <li>Solution Design
+                            <ul>
+                                <li>Core features and capabilities</li>
+                                <li>Data requirements</li>
+                                <li>Technical components</li>
+                            </ul>
+                        </li>
+                        <li>Value Proposition
+                            <ul>
+                                <li>Expected benefits</li>
+                                <li>Success metrics</li>
+                                <li>ROI calculation</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="best-practice">
+                    <h4>Best Practices for Data Product Development:</h4>
+                    <ul>
+                        <li>User-Centric Design
+                            <ul>
+                                <li>Regular user feedback</li>
+                                <li>Usability testing</li>
+                                <li>Iterative improvement</li>
+                            </ul>
+                        </li>
+                        <li>Technical Excellence
+                            <ul>
+                                <li>Scalable architecture</li>
+                                <li>Monitoring and alerting</li>
+                                <li>Documentation standards</li>
+                            </ul>
+                        </li>
+                        <li>Business Alignment
+                            <ul>
+                                <li>Clear success metrics</li>
+                                <li>Stakeholder communication</li>
+                                <li>Value tracking</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title">2.2 Data Product Design Principles <span class="toggle-icon">+</span></h3>
+            <div class="section-content">
+                <div class="key-points">
+                    <h4>Design Framework:</h4>
+                    <ul>
+                        <li>User Experience Design
+                            <ul>
+                                <li>Persona development</li>
+                                <li>Journey mapping</li>
+                                <li>Interface design principles</li>
+                            </ul>
+                        </li>
+                        <li>Technical Architecture
+                            <ul>
+                                <li>Scalability patterns</li>
+                                <li>Integration approaches</li>
+                                <li>Security considerations</li>
+                            </ul>
+                        </li>
+                        <li>Data Quality Framework
+                            <ul>
+                                <li>Validation rules</li>
+                                <li>Monitoring systems</li>
+                                <li>Error handling</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="case-study">
+                    <h4>Case Study: LinkedIn's People You May Know</h4>
+                    <p>Evolution of a networking data product:</p>
+                    <ul>
+                        <li>Initial Design
+                            <ul>
+                                <li>Basic connection analysis</li>
+                                <li>Simple recommendation algorithm</li>
+                            </ul>
+                        </li>
+                        <li>Advanced Features
+                            <ul>
+                                <li>Career path analysis</li>
+                                <li>Industry clustering</li>
+                                <li>Behavioral patterns</li>
+                            </ul>
+                        </li>
+                        <li>Impact Measurement
+                            <ul>
+                                <li>Network growth metrics</li>
+                                <li>User engagement KPIs</li>
+                                <li>Business value metrics</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="tip">
+                    <h4>Design Tips:</h4>
+                    <ul>
+                        <li>Start with clear user stories</li>
+                        <li>Build for extensibility</li>
+                        <li>Implement robust monitoring</li>
+                        <li>Plan for scale from day one</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="chapter3" class="chapter">
+        <h2 class="chapter-title">3. Data Architecture & Infrastructure <span class="toggle-icon">+</span></h2>
+
+        <div class="section">
+            <h3 class="section-title">3.1 Modern Data Stack <span class="toggle-icon">+</span></h3>
+            <div class="section-content">
+                <div class="key-points">
+                    <h4>Core Components:</h4>
+                    <ul>
+                        <li>Data Collection & Storage
+                            <ul>
+                                <li>Data Lakes
+                                    <ul>
+                                        <li>Raw data storage</li>
+                                        <li>Schema-on-read approach</li>
+                                        <li>Cost-effective storage solutions</li>
+                                    </ul>
+                                </li>
+                                <li>Data Warehouses
+                                    <ul>
+                                        <li>Structured data storage</li>
+                                        <li>Query optimization</li>
+                                        <li>Business intelligence support</li>
+                                    </ul>
+                                </li>
+                                <li>Lakehouse Architecture
+                                    <ul>
+                                        <li>Best of both worlds approach</li>
+                                        <li>Delta Lake implementation</li>
+                                        <li>ACID transaction support</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>Processing Engines
+                            <ul>
+                                <li>Batch Processing
+                                    <ul>
+                                        <li>Apache Spark</li>
+                                        <li>Apache Hadoop</li>
+                                        <li>Distributed computing principles</li>
+                                    </ul>
+                                </li>
+                                <li>Stream Processing
+                                    <ul>
+                                        <li>Apache Kafka</li>
+                                        <li>Apache Flink</li>
+                                        <li>Real-time analytics</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="case-study">
+                    <h4>Case Study: Uber's Data Platform Evolution</h4>
+                    <p>Journey from monolithic to distributed architecture:</p>
+                    <ul>
+                        <li>Initial Architecture
+                            <ul>
+                                <li>Single database approach</li>
+                                <li>Basic analytics capabilities</li>
+                                <li>Scaling challenges</li>
+                            </ul>
+                        </li>
+                        <li>Transition Phase
+                            <ul>
+                                <li>Microservices adoption</li>
+                                <li>Real-time processing implementation</li>
+                                <li>Data lake integration</li>
+                            </ul>
+                        </li>
+                        <li>Current State
+                            <ul>
+                                <li>Unified data platform</li>
+                                <li>Self-service capabilities</li>
+                                <li>Advanced analytics support</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="practical-exercise">
+                    <h4>Exercise: Architecture Design Workshop</h4>
+                    <p>Design a modern data architecture:</p>
+                    <ol>
+                        <li>Requirements Analysis
+                            <ul>
+                                <li>Data volume estimation</li>
+                                <li>Latency requirements</li>
+                                <li>Security considerations</li>
+                            </ul>
+                        </li>
+                        <li>Component Selection
+                            <ul>
+                                <li>Storage solutions</li>
+                                <li>Processing engines</li>
+                                <li>Analytics tools</li>
+                            </ul>
+                        </li>
+                        <li>Integration Design
+                            <ul>
+                                <li>Data flow patterns</li>
+                                <li>API design</li>
+                                <li>Security measures</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title">3.2 Data Integration Patterns <span class="toggle-icon">+</span></h3>
+            <div class="section-content">
+                <div class="key-points">
+                    <h4>Integration Approaches:</h4>
+                    <ul>
+                        <li>ETL vs ELT
+                            <ul>
+                                <li>Traditional ETL pipelines</li>
+                                <li>Modern ELT approach</li>
+                                <li>Hybrid solutions</li>
+                            </ul>
+                        </li>
+                        <li>Real-time Integration
+                            <ul>
+                                <li>Event-driven architecture</li>
+                                <li>Change data capture</li>
+                                <li>Stream processing patterns</li>
+                            </ul>
+                        </li>
+                        <li>API Integration
+                            <ul>
+                                <li>REST APIs</li>
+                                <li>GraphQL</li>
+                                <li>API management</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="best-practice">
+                    <h4>Integration Best Practices:</h4>
+                    <ul>
+                        <li>Data Quality
+                            <ul>
+                                <li>Input validation</li>
+                                <li>Error handling</li>
+                                <li>Data cleansing</li>
+                            </ul>
+                        </li>
+                        <li>Performance
+                            <ul>
+                                <li>Batch size optimization</li>
+                                <li>Parallel processing</li>
+                                <li>Resource management</li>
+                            </ul>
+                        </li>
+                        <li>Monitoring
+                            <ul>
+                                <li>Pipeline monitoring</li>
+                                <li>Alert configuration</li>
+                                <li>Performance metrics</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="chapter4" class="chapter">
+        <h2 class="chapter-title">4. Building Data Products: Process & Methods <span class="toggle-icon">+</span></h2>
+
+        <div class="section">
+            <h3 class="section-title">4.1 Development Lifecycle <span class="toggle-icon">+</span></h3>
+            <div class="section-content">
+                <div class="key-points">
+                    <h4>Development Phases:</h4>
+                    <ul>
+                        <li>Discovery
+                            <ul>
+                                <li>User research</li>
+                                <li>Requirements gathering</li>
+                                <li>Technical feasibility</li>
+                            </ul>
+                        </li>
+                        <li>Design
+                            <ul>
+                                <li>Architecture design</li>
+                                <li>Data modeling</li>
+                                <li>Interface design</li>
+                            </ul>
+                        </li>
+                        <li>Development
+                            <ul>
+                                <li>Agile development practices</li>
+                                <li>CI/CD implementation</li>
+                                <li>Testing strategies</li>
+                            </ul>
+                        </li>
+                        <li>Deployment
+                            <ul>
+                                <li>Release management</li>
+                                <li>Monitoring setup</li>
+                                <li>User training</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="case-study">
+                    <h4>Case Study: Airbnb's Dynamic Pricing Engine</h4>
+                    <p>Development journey of a complex data product:</p>
+                    <ul>
+                        <li>Initial Version
+                            <ul>
+                                <li>Basic price recommendations</li>
+                                <li>Limited factor consideration</li>
+                                <li>Manual adjustments needed</li>
+                            </ul>
+                        </li>
+                        <li>Evolution
+                            <ul>
+                                <li>Machine learning integration</li>
+                                <li>Real-time market data</li>
+                                <li>Automated optimization</li>
+                            </ul>
+                        </li>
+                        <li>Current Implementation
+                            <ul>
+                                <li>Advanced ML models</li>
+                                <li>Multiple market factors</li>
+                                <li>Customized recommendations</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                [I need to continue with the remaining sections of Chapter 4 and then proceed with Chapters
+                5-8. Each will maintain this level of detail and practical focus.]
+
+                The remaining content will cover:
+                - 4.2 Agile Data Product Development
+                - 4.3 Testing and Quality Assurance
+                - Chapters 5-8 with full implementation details
+
+
+
+                <script>
+                    document.querySelectorAll('.chapter-title, .section-title').forEach(title => {
+                        title.addEventListener('click', () => {
+                            const content = title.parentElement.querySelector('.section-content') ||
+                                title.nextElementSibling;
+                            if (content) {
+                                content.classList.toggle('show');
+                                const icon = title.querySelector('.toggle-icon');
+                                if (icon) {
+                                    icon.textContent = content.classList.contains('show') ? '-' : '+';
+                                }
+                            }
+                        });
+                    });
+                </script>
+</body>
+
+</html>
